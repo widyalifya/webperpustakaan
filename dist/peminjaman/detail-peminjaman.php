@@ -62,7 +62,6 @@
                                     </tr>
                                     <tr>
                                         <td colspan="2">
-                                            <button class="btn btn-warning btn-circle" id="tombol_edit_anggota" kode_peminjaman="<?php echo $_GET['kode_peminjaman'];?>"  kode_anggota="<?php echo $ambil['kode_anggota'];?>" ><i class="fas fa-edit"></i></button>
                                             
                                         </td>
                                     </tr>
@@ -188,7 +187,7 @@
                                         <td>Rp. <?php echo number_format($ambil['denda'],0,',','.'); ?></td>
                                         <td>
                                             <button class="tombol_konfirmasi btn btn-primary btn-circle" kode_anggota="<?php echo $kode_anggota; ?>" kode_pustaka="<?php echo $ambil['kode_pustaka']; ?>"  id_detail_peminjaman="<?php echo $ambil['id_detail_peminjaman']; ?>"  kode_peminjaman="<?php echo $_GET['kode_peminjaman']; ?>"  tanggal_pinjam="<?php echo $ambil['tanggal_pinjam']; ?>" status="<?php echo $ambil['status'];?>" jenis_denda="<?php echo $ambil['jenis_denda'];?>" denda="<?php echo $ambil['denda'];?>" ><i class="fas fa-check"></i></button>
-                                            <button class="tombol_edit_peminjaman btn btn-warning btn-circle" id_detail_peminjaman="<?php echo $ambil['id_detail_peminjaman']; ?>" kode_peminjaman="<?php echo $_GET['kode_peminjaman']; ?>"  kode_pustaka="<?php echo $ambil['kode_pustaka']; ?>" ><i class="fas fa-edit"></i></button>
+                            
                                             <a href="peminjaman/detail-peminjaman/hapus-peminjaman.php?kode_peminjaman=<?php echo $_GET['kode_peminjaman']; ?>&id_detail_peminjaman=<?php echo $ambil['id_detail_peminjaman'];?>" class="btn-hapus-Peminjaman btn btn-danger btn-circle" ><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
