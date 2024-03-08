@@ -118,7 +118,7 @@ if (isset($_POST['edit_pustaka'])) {
     $rak=$data['rak'];
     $sinopsis=$data['sinopsis'];
     $gambar_pustaka=$data['gambar_pustaka'];
-   
+ 
 
 ?>
 <form action="pustaka/edit.php" method="post" enctype="multipart/form-data">

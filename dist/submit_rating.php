@@ -1,7 +1,7 @@
 <?php
 
 // Inisialisasi objek PDO untuk koneksi ke database
-$kon = new PDO("mysql:host=localhost;dbname=db_perpustakaan", "root", "");
+$kon = new PDO("mysql:host=localhost;dbname=perpuss", "root", "");
 
 // Kelas ReviewHandler untuk menangani ulasan
 class ReviewHandler

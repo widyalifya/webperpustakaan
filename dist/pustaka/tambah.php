@@ -30,26 +30,32 @@ session_start();
 
             $tanggal=date("Y-m-d");
 
-            $ekstensi_diperbolehkan	= array('png','jpg');
+            $ekstensi_diperbolehkan	= array('png','jpg','jpeg');
             $gambar_pustaka = $_FILES['gambar_pustaka']['name'];
             $x = explode('.', $gambar_pustaka);
             $ekstensi = strtolower(end($x));
             $ukuran	= $_FILES['gambar_pustaka']['size'];
             $file_tmp = $_FILES['gambar_pustaka']['tmp_name'];	
 
-            if (!empty($gambar_pustaka)){
+            if (isset($gambar_pustaka)){
                 if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
                     if($ukuran < 1044070){	
                         //Mengupload gambar
                         move_uploaded_file($file_tmp, 'gambar/'.$gambar_pustaka);
-                        $sql="insert into pustaka (kode_pustaka,judul_pustaka,kategori_pustaka,penulis,penerbit,tahun,gambar_pustaka,halaman,dimensi,stok,rak,sinopsis) values
-                        ('$kode','$judul_pustaka','$kategori_pustaka','$penulis','$penerbit','$tahun','$gambar_pustaka','$halaman','$dimensi','$stok','$rak','$sinopsis')";
+                        $sql="INSERT INTO pustaka (kode_pustaka,judul_pustaka,kategori_pustaka,penulis,penerbit,tahun,gambar_pustaka,halaman,dimensi,stok,rak) values
+                        ('$kode','$judul_pustaka','$kategori_pustaka','$penulis','$penerbit','$tahun','$gambar_pustaka','$halaman','$dimensi','$stok','$rak')";
+                    }   else {
+                        mysqli_query($kon,"ROLLBACK");
+                        header("Location:../../dist/index.php?page=pustaka&add=gagal");
                     }
+                }   else {
+                    mysqli_query($kon,"ROLLBACK");
+                    header("Location:../../dist/index.php?page=pustaka&add=gagal");
                 }
             }else {
                 $gambar_pustaka="gambar_default.png";
-                $sql="insert into pustaka (kode_pustaka,judul_pustaka,kategori_pustaka,penulis,penerbit,tahun,gambar_pustaka,halaman,dimensi,stok,rak,sinopsis) values
-                ('$kode','$judul_pustaka','$kategori_pustaka','$penulis','$penerbit','$tahun','$gambar_pustaka','$halaman','$dimensi','$stok','$rak','$sinopsis')";
+                $sql="INSERT INTO pustaka (kode_pustaka,judul_pustaka,kategori_pustaka,penulis,penerbit,tahun,gambar_pustaka,halaman,dimensi,stok,rak) values
+                ('$kode','$judul_pustaka','$kategori_pustaka','$penulis','$penerbit','$tahun','$gambar_pustaka','$halaman','$dimensi','$stok','$rak')";
             }
 
             $simpan_pustaka=mysqli_query($kon,$sql);
@@ -63,6 +69,7 @@ session_start();
                 mysqli_query($kon,"ROLLBACK");
                 header("Location:../../dist/index.php?page=pustaka&add=gagal");
             }
+            
         }
     }
       // mengambil data pustaka dengan kode paling besar

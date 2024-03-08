@@ -2,7 +2,7 @@
     $host="localhost";
     $user="root";
     $password="";
-    $db="db_perpustakaan";
+    $db="perpuss";
     
     $kon = mysqli_connect($host,$user,$password,$db);
     if (!$kon){

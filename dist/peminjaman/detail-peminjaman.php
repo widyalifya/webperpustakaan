@@ -194,7 +194,8 @@
                                         <?php endwhile;?>
                                     </tbody>
                                 </table>
-                                <a href="peminjaman/detail-peminjaman/invoice.php?kode_peminjaman=<?php echo $kode_peminjaman; ?>" target='blank' class="btn btn-dark btn-icon-pdf"><span class="text"><i class="fas fa-print fa-sm"></i> Cetak</span></a>
+                                <!-- <a href="peminjaman/detail-peminjaman/invoice.php?kode_peminjaman=<?php echo $kode_peminjaman; ?>" target='blank' class="btn btn-dark btn-icon-pdf"><span class="text"><i class="fas fa-print fa-sm"></i> Cetak</span></a> -->
+                                
                             </div>
                         </div>
                     </div>

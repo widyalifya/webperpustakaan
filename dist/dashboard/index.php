@@ -5,7 +5,10 @@
     <div class="container-fluid">
         <h2 class="mt-4">Dashboard</h2>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Dashboard</li>
+        <div class="d-flex">
+            <h4 class="text-primary">Tentang Kami</h4>
+          </div>
+            <li class="breadcrumb-item active">Selamat datang di platform peminjaman buku kami! Di sini, Anda dapat dengan mudah meminjam buku favorit Anda secara online dan mengambilnya langsung di lokasi yang telah ditentukan. Dengan proses peminjaman yang cepat dan efisien, kami memastikan pengalaman yang nyaman dan praktis bagi semua pengguna kami. Selamat menikmati layanan kami!</li>
         </ol>
 
         <?php if ($_SESSION["level"]=='Karyawan' or $_SESSION["level"]=='karyawan'):?>

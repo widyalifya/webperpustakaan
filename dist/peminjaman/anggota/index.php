@@ -142,7 +142,7 @@
                     </table>
                 </div>
                 <?php if ($jum!=0):?>
-                <a href="peminjaman/detail-peminjaman/invoice.php?kode_peminjaman=<?php if (isset($_GET['kode_peminjaman']) and $_GET['kode_peminjaman']!='') echo $_GET['kode_peminjaman']; ?>&kode_anggota=<?php echo $kode_anggota; ?>" target='blank' class="btn btn-dark btn-icon-pdf"><span class="text"><i class="fas fa-print fa-sm"></i> Cetak</span></a>
+                <!-- <a href="peminjaman/detail-peminjaman/invoice.php?kode_peminjaman=<?php if (isset($_GET['kode_peminjaman']) and $_GET['kode_peminjaman']!='') echo $_GET['kode_peminjaman']; ?>&kode_anggota=<?php echo $kode_anggota; ?>" target='blank' class="btn btn-dark btn-icon-pdf"><span class="text"><i class="fas fa-print fa-sm"></i> Cetak</span></a> -->
                 <?php endif; ?>
             </div>
         </div>
